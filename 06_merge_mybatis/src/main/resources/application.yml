@@ -1,0 +1,8 @@
+# mybatis映射
+# http://www.mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/#Configuration # 这后面我手动加了个锚点
+
+
+# 此配置可以到mybatis-spring-boot-autoconfigure/META-INF/spring-configuration-metadata.json中寻找
+mybatis:
+  type-aliases-package: com.xixi.pojo
+  mapper-locations: classpath:mapper/*Mapper.xml

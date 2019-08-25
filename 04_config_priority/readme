@@ -1,0 +1,33 @@
+
+
+springboot默认会读取四个位置的配置文件，按优先级从高到低依次如下：
+项目根目录的config目录下，注意不是模块的根目录
+项目根目录下，注意不是模块的根目录
+classpath:./config目录下
+classpath:./目录下
+四个位置配置文件时互补的关系，最终会被合并到最终的配置中，如果有相同配置优先级高的生效
+
+
+注意：如果当前项目是一个模块，那么config需要建立在其父项目的跟目录下才会生效
+
+
+
+
+如果打包成jar包，默认也会读取当前目录下的application.properties文件，优先级高于前面四个位置的配置文件
+也可以通过--spring.config.location=G:\application.properties来进行指定
+
+
+
+再个就是打包的时候项目目录下那两个位置的文件是无法打包的，只能打包src目录下的文件
+
+
+命令行参数高于配置文件中的配置
+如果命令行中有--server.port=8087，则此端口生效
+
+# server.servlet.context-path是springboot 2.x之后的写法
+java -jar xxx.jar --server.port=8087 --server.servlet.context-path=/test02
+
+
+
+更多读取配置文件的场景查看官方文档：
+Externalized Configuration

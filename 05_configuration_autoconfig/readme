@@ -1,0 +1,12 @@
+在配置文件(application.properties/application.yml)中可以配置哪些东西，获取途径
+官方文档：Common application properties
+
+
+
+
+寻找*AutoConfiguration类
+例如有CacheAutoConfiguration -> @EnableConfigurationProperties(CacheProperties.class)
+跟Cache相关的配置属性都在CacheProperties中
+
+
+再如HttpEncodingAutoConfiguration -> @ConditionalOnClass(CharacterEncodingFilter.class) -> CharacterEncodingFilter
